@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <div id="div_logo">
+                <a href="#">Art<span> Inked</span></a>
+            </div>
+            <ul>
+                <li><a href="#container">Home</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+                
+            </ul>
+        </nav>
+       <section id="pagina1">
+
+            <p id="title">Traços únicos, conexões infinitas</p>
+            <p class="subtitle">Descubra o mundo das tatuagens</p>
+
+            <div id="div_login_cadastro">
+                <div id="cadastro">
+                    <div>
+                        <p>Não possuí uma conta?</p>
+                        <a href="#pagina3">Cadastre-se</a>
+                    </div>
+                </div>
+
+                <div id="login">
+                    <p>Já nos conhece? faça Login</p>
+                    <label for="email" class="label">E-mail</label>
+                    <input id="email" type="email">
+                    <label for="senha" class="label">Senha</label>
+                    <input id="senha" type="password">
+                    <button id="btn_login" onclick="login()">Login</button>
+                </div>
+            </div>
+       </section>
+       <section id="pagina2">
+            <p class="subtitle">Sobre nós</p>
+            <div id="div_sobre_nos">
+                <div class="div_texto_sobre">
+                    <p class="subtitle"><span>Bruna</span> Laysa Barboza</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur libero doloremque, velit eum magni obcaecati modi nobis odio, necessitatibus enim, repellat ipsa accusantium dolore expedita repudiandae et deserunt praesentium animi?</p>
+                </div>
+                <div class="div_perfil">
+                    <div id="img_perfil">
+
+                    </div>
+                </div>
+            </div>   
+       </section>
+       <section id="pagina3">
+            
+            <div class="div_form_cadastro">
+                <label for="cad_nome">Nome</label>
+                <input id="cad_nome" type="text">
+                <label for="cad_email">E-mail</label>
+                <input id="cad_email" type="email">
+                <label for="cad_senha">Senha</label>
+                <input id="cad_senha" type="password">
+                <label for="conf_senha">Confirmar senha</label>
+                <input  id="conf_senha" type="password">
+                <button id="btn_cadastro">CADASTRAR</button>
+            </div>
+
+            <div class="div_texto_cadastro">
+                <p class="subtitle">Art<span> Inked</span></p>
+                <p>Estamos animados por você ter nos encontrado e esperamos que nosso site seja uma ferramenta útil em sua jornada pela arte da tatuagem. Explore, inspire-se e desfrute de tudo o que temos a oferecer. Lembre-se sempre de que as tatuagens são uma forma de arte duradoura e significativa, então escolha sabiamente e aprecie sua tinta para toda a vida.</p>
+            </div>
+       </section>
+
+       <section id="pagina4">
+
+       </section>
+       
+    </div>
+
+    <script src="js/animateScroll.js"></script>
+</body>
+</html>

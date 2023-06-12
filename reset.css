@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+:root{
+    --cor-base : rgb(4, 14, 14);
+    --text-color :#c0c0c0;
+    --hover-color : rgb(32, 158, 158);
+}
+
+body{
+    background-color: #111;
+}

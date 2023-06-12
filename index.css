@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --cor-base : rgb(4, 14, 14);
+    --text-color :#c0c0c0;
+    --hover-color : rgb(32, 158, 158);
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+    background-color: #111;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-x:hidden;
+}
+
+nav{
+    display: flex;
+    padding: 1.5rem;
+    height: 10vh;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+    width: 70%;
+    justify-content: flex-end;
+}
+
+nav ul a{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: clamp(1em, 3vw, 1.2em);
+    transition: color .5s, background-color .5s;
+    padding: .4em;
+    border-radius: .5em;
+}
+
+nav ul a:hover{
+    background-color: #fff5;
+    color: #111;
+}
+
+#div_logo{
+    width: 30%;
+}
+
+#div_logo a{
+    font-size: clamp(1em ,2vw, 1.2em);
+    font-weight: 200;
+    text-decoration: none;
+    position: relative;
+}
+
+#div_logo a::after{
+    content: '';
+    background-color: rgba(32, 158, 158, .5);
+    width: 50%;
+    height: 0;
+    position: absolute;
+    left: -15%;
+    top: -25%;
+    border-radius: 50%;
+    z-index: -1;
+    transition: background .5s, transform .5s;
+    padding-bottom: 50%;
+}
+
+#div_logo a:hover::after{
+    background-color: #fff5;
+    transform: translateX(170%);
+}
+
+span{
+    color: var(--hover-color);
+    font-weight: 900;
+}
+
+section{
+    width: 100%;
+    height:100vh;
+    scroll-snap-align: start;
+    opacity: 0;
+    padding-top: 10vh;
+    position: relative;
+}
+
+#title{
+    text-align: center;
+    padding-top: 2rem;
+    font-weight: 900;
+    font-size: clamp(16px, 5vw, 3.2em);
+}
+
+.subtitle{
+    text-align: center;
+    height: 10vh;
+    padding-top: 1rem;
+    font-size: clamp(16px, 5vw, 2em);
+    font-weight: 600;
+    font-style: italic;
+}
+
+#div_login_cadastro{
+    display: flex;
+    height: 55%;
+    max-width: 900px;
+    margin: 2rem auto 0 auto;
+    box-shadow: 1.5em 2em 1em #0005;
+    border-radius: 1rem;
+    border: 1px solid #333;
+    position: relative;
+}
+
+#div_login_cadastro::before{
+    content: '';
+    position: absolute;
+    background-color: #fff1;
+    border-radius: 1em;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    right: -5%;
+    top: 10%;
+}
+
+#cadastro{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    border-radius: .5rem 0 0 .5rem;
+    background-image: url(img/woman-2591043.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 100%;
+}
+
+#cadastro p {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+#cadastro div{
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+#cadastro a{
+   text-decoration: none;
+   font-weight: 900;
+   font-size: 1.3em;
+   letter-spacing: .1rem;
+   background-color: #000a;
+   border-radius: 1rem;
+   padding: .7em;
+   transition: color .5s, background-color .5s, box-shadow .5s;
+}
+
+#cadastro a:hover{
+    background-color: #111;
+    color: var(--hover-color);
+    box-shadow: .1em .5em 1em #000a;
+}
+
+#login{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 1rem 1rem 0;
+    background-color: var(--cor-base);
+}
+
+#login p{
+    font-weight: 300;
+    font-size: clamp(1em, 2vw, 1.3em);
+    padding-top: .5em;
+
+}
+
+.label{
+    align-self: flex-start;
+    margin-left:10%;
+    padding: .5rem;
+}
+
+#email,
+#senha {
+    width: 80%;
+    padding: .7em;
+    border-radius: .3em;
+    outline: 0;
+    color: black;
+    background-color: #fff5;
+    border-bottom: 4px solid rgb(14, 44, 44);
+}
+
+#email:focus,
+#senha:focus{
+    background-color: #fff9;
+}
+
+#btn_login{
+    margin-top: 2rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    width: 40%;
+    background-color: #fff5;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #111;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: color .5s;
+}
+
+#btn_login::after{
+    content: 'Login';
+    position: absolute;
+    background-color: rgb(14, 44, 44);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding-top: 10px;
+    color: var(--text-color);
+    border-radius: .2em;
+    left: 0;
+    transform: translateY(110%);
+    transition: transform .5s;
+    box-shadow: .1em -.5em 1em #0005;
+}
+
+#btn_login:hover::after,
+#btn_login:hover{
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+#div_sobre_nos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.div_texto_sobre{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2em;
+    height: 80%;
+    line-height: 2em;
+    font-size: clamp(.9em, 2vw, 1.2em);
+    text-align: justify;
+    position: relative;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.div_perfil{
+    width: 50%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#img_perfil{
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+    background-image: url(img/woman-2591043.jpg);
+    background-size: cover;
+    box-shadow: .5em 2em 1em rgb(14, 44, 44);
+    animation: float 1s infinite alternate-reverse;
+}
+
+.div_texto_cadastro{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    line-height: 2em;
+    font-size: clamp(.9em, 2vw, 1.2em);
+    padding-right: 2em;
+    text-align: justify;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+}
+
+.div_form_cadastro{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    position: relative;
+}
+
+.div_form_cadastro p {
+    font-size: clamp(1em, 2vw, 1.2em);
+}
+
+.div_form_cadastro::before{
+    content: '';
+    position: absolute;
+    background-color: var(--cor-base);
+    border: 1px solid #333;
+    height: 80%;
+    width: 80%;
+    z-index: -1;
+    border-radius: 1em;
+    box-shadow: -1em 1em 1em #0005;
+}
+
+.div_form_cadastro::after{
+    content: '';
+    background-color: #fff1;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    border-radius: 1em;
+    transform: translate(-1.5em, 1.5em);
+    z-index: -2;
+}
+
+.div_form_cadastro input,
+#btn_cadastro
+{
+    width: 60%;
+    outline: 0;
+    border-radius: .5em;
+    padding: .5rem;
+    background-color: #fff5;
+    margin-bottom: .5rem;
+    box-shadow: 0 1em 1em #0003;
+    transition: background .5s, transform .5s;
+}
+
+#btn_cadastro{
+    cursor: pointer;
+    color: #111;
+    font-weight: 900;
+    border: 1px solid #333;
+    background-color: rgba(32, 158, 158, .5);
+}
+
+#btn_cadastro:hover{
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.div_form_cadastro label{
+    align-self: flex-start;
+    margin-left: 20%;
+}
+
+#pagina1::before{
+    content: '';
+    background: linear-gradient(to bottom, #111, rgb(14, 44, 44));
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+
+#pagina1::after{
+    content: '';
+    position: absolute;
+    background-color: rgba(32, 158, 158, .1);
+    width: 10%;
+    height: 180%;
+    bottom: -90%;
+    border-radius: 0 1.5em 1.5em 0;
+}
+
+#pagina2{
+    height: 100vh;
+    position: relative;
+}
+
+#pagina2::after{
+    content: '';
+    background-color: rgba(32, 158, 158, .1);
+    position: absolute;
+    height: 75%;
+    width: 10%;
+    right: 0;
+    bottom: -90%;
+    border-radius: 1.5em 0 0 1.5em;
+}
+
+#pagina2 p {
+
+}
+
+#pagina3{
+    display: flex;
+}
+
+#pagina4{
+
+}
+
+
+
+
+
+
+
+.fade{
+    animation: fade 1s ease-in;
+    opacity: 1;
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    from{
+        transform: translateY(-2%);
+    }
+    to{
+        transform: translateY(2%) ;
+    }
+}
