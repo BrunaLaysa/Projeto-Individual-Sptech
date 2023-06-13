@@ -1,5 +1,3 @@
-let currentSlide = 0;
-
 window.addEventListener('scroll', function() {
     var sections = document.querySelectorAll('section');
     
@@ -17,16 +15,24 @@ window.addEventListener('scroll', function() {
     });
   });
 
-  const slides = document.querySelectorAll('.slide');
-  
-  
-  function nextSlide() {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
+let btnLogin = document.getElementById('btn_login')
+
+var login = document.getElementById('email')
+
+var senha = document.getElementById('senha')
+
+var valorLogin = login.value;
+
+var valorSenha = senha.value;
+
+btnLogin.addEventListener('click', ()=> {
+  console.log(login);
+  console.log(senha);
+
+  if(valorLogin === '' || valorSenha === ''){
+    window.alert('Oopa')
   }
-    nextSlide()
-    setInterval(nextSlide, 5000);
-  
-  
-  
+  else{
+    window.location.href = 'User/PaginaInicial.html'
+  }
+})

@@ -4,11 +4,116 @@
     --hover-color : rgb(32, 158, 158);
 }
 
+nav{
+    display: flex;
+    padding: 1.5rem;
+    height: 10vh;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: #111;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 .5em 1em #0005;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+    width: 70%;
+    justify-content: flex-end;
+}
+
+nav ul li:last-child > a{
+    color: tomato;
+}
+
+nav ul a{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: clamp(1em, 3vw, 1.2em);
+    transition: color .5s, background-color .5s;
+    padding: .4em;
+    border-radius: .5em;
+}
+
+nav ul a:hover{
+    background-color: #fff5;
+    color: #111;
+}
+
+#div_logo{
+    width: 30%;
+}
+
+#div_logo a{
+    font-size: clamp(1em ,2vw, 1.2em);
+    font-weight: 200;
+    text-decoration: none;
+    position: relative;
+}
+
+#div_logo a::after{
+    content: '';
+    background-color: rgba(32, 158, 158, .5);
+    width: 50%;
+    height: 0;
+    position: absolute;
+    left: -15%;
+    top: -40%;
+    border-radius: 50%;
+    z-index: -1;
+    transition: background .5s, transform .5s;
+    padding-bottom: 50%;
+}
+
+#div_logo a:hover::after{
+    background-color: #fff5;
+    transform: translateX(170%);
+}
+
+span{
+    color: var(--hover-color);
+    font-weight: 900;
+}
+
+.texto_inicial{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.title,
+.subtitle{
+    z-index: 2;
+}
+
+.title{
+    font-size: clamp(1.5em, 3vw, 3em);
+    font-weight: 900;
+    text-shadow: .1em .1em .1em #0005;
+}
+
+.subtitle{
+    font-size: clamp(1em, 3vw, 2em);
+    text-shadow: .1em .1em .1em #0005;
+    font-style: italic;
+}
+
 .carousel {
     width: 100%;
     height: 70vh;
     position: relative;
     overflow: hidden;
+    margin-top: 2em;
 }
   
 .slide {
@@ -34,4 +139,160 @@
 .slide.active {
     opacity: 1;
 }
-  
+
+#select_categoria{
+    outline: 0;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 2em;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: #333;
+    box-shadow: 1em 1em 1em #0005;
+}  
+
+.section_tattoo{
+    display: flex;
+    gap: 3em;
+    padding: 4em 2em;
+    height: 70vh;
+    flex-shrink: 1;
+    overflow-x: scroll;
+    position: relative;
+    border-top: 1px solid #333;
+}
+
+.section_tattoo p{
+    position: absolute;
+    top: 1em;
+    z-index: 1;
+    left: 2em;
+    font-weight: 900;
+    letter-spacing: .1em;
+    font-size: 1.2em;
+}
+
+.card_tattoo{
+    aspect-ratio: 3/4;
+    box-shadow: 1em 1em 1em #0005;
+    border-radius: 1em;
+    position: relative;
+}
+
+.card_tattoo img{
+    width: 100%;
+    height: 85%;
+    border-radius: 1em 1em 0 0;
+    object-fit: cover;
+}
+
+.card_tattoo::after{
+    content: '';
+    border-radius: 1em 1em 0 0;
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card_tattoo:hover::after{
+    background-color: #0005;
+}
+
+.div_reacao{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    border-radius: 0 0 1em 1em;
+    align-items: center;
+    background-color: #333;
+    justify-content: space-around;
+}
+
+.div_reacao button{
+    background-color: transparent;
+}
+
+.like_icon{
+    transition: transform .1s, color .5s;
+    font-size: 1.1em;
+}
+
+
+
+.coment_icon{
+    transition: transform .1s, color .5s;
+    font-size: 1.1em;
+}
+
+.coment_icon:hover{
+    color: var(--hover-color);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.like-btn{
+    transition: transform .5s;
+}
+
+.like-btn:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+    -webkit-text-stroke: 1px red;
+}
+
+.liked > .like_icon{
+    color: red;
+}
+
+
+/*Tela de informações----------------------------*/
+
+#informacoes_categoria{
+    
+}
+
+.card_info{
+    display: flex;
+    height: 50vh;
+    padding: 2em;
+    gap: 2em;
+}
+
+.title_info{
+    font-weight: 900;
+    letter-spacing: .1em;
+    font-style: italic;
+    font-size: 1.2em;
+    background-color: #333;
+    padding: 1em;
+    border-radius: .5em;
+    border-bottom: 1px solid #ccc;
+}
+
+.text_info{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 1em;
+    padding: 1em;
+    font-size: 1.1em;
+    line-height: 2em;
+}
+
+.img_info{
+    width: 40%;
+    height: 100%;
+    border-radius: 1em;
+    box-shadow: 1em 1em 1em #0005;
+}
+
+.img_info img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 1em;
+}
