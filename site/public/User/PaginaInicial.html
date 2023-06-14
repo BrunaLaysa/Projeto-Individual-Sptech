@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PaginaInicial.css">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Pagina Inicial</title>
+</head>
+<body>
+    <nav>
+        <div id="div_logo">
+            <a href="#">Art <span>Inked</span></a>
+        </div>
+        <ul>
+            <li><a href="#container">Inicio</a></li>
+            <li><a href="info.html">Informações</a></li>
+            <li><a href="populares.html">Populares</a></li>
+            <li><a href="../index.html">Sair</a></li>
+        </ul>
+    </nav>
+    <div id="container">
+        <div class="carousel">
+            <div class="texto_inicial">
+                <p class="title">Liberte sua autenticidade, tinta na pele</p>
+                <p class="subtitle">"Expresse quem você realmente é"</p>
+            </div>
+            <div class="slide active" style="background-image: url(../img/slide1.jpg);"></div>
+            <div class="slide" style="background-image: url(../img/slide2.jpg);"></div>
+            <div class="slide" style="background-image: url(../img/slide3.jpg);"></div>
+          </div>
+    </div>
+    
+    <select name="categoria" id="select_categoria">
+        <option value="todas">Todas</option>
+    </select>
+
+    <div id="galeria">
+        <section class="section_tattoo" data-categoria="1">
+            <p>Old School</p>
+        </section>
+
+        <section class="section_tattoo" data-categoria="2">
+            <p>Black Work</p>
+        </section>
+
+        <section class="section_tattoo" data-categoria="3">
+            <p>Realismo</p>
+        </section>
+
+        <section class="section_tattoo" data-categoria="4">
+            <p>Pontilhismo</p>
+        </section>
+    </div>
+
+    <script src="../js/paginaInicial.js"></script>
+</body>
+</html>

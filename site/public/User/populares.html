@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="PaginaInicial.css">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav>
+        <div id="div_logo">
+            <a href="#">Art <span>Inked</span></a>
+        </div>
+        <ul>
+            <li><a href="PaginaInicial.html">Inicio</a></li>
+            <li><a href="info.html">Informações</a></li>
+            <li><a href="populares.html">Populares</a></li>
+            <li><a href="../index.html">Sair</a></li>
+        </ul>
+    </nav>
+    <div id="grafico1">
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+    
+   
+</body>
+
+</html>
+<script>
+
+    const labels = [];
+
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Quantidade Curtidas Por Categoria',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [
+            ],
+        }]
+      };
+        
+      
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+    
+    
+       
+        const myChart = new Chart(
+document.getElementById('myChart'),
+      config
+    );
+
+    window.onload = () => {
+    fetch("/categorias/contarCurtidas", {
+        method: "GET"
+    }).then(function(resposta) {
+        if (resposta.ok) {
+            resposta.json().then(json => {
+                const labels = json.map(categoria => categoria.nomeCategoria);
+                const data = json.map(categoria => categoria.quantidadeCurtidas);
+
+                // Atualizar os dados do gráfico
+                myChart.data.labels = labels;
+                myChart.data.datasets[0].data = data;
+                myChart.update();
+            });
+        } else {
+            console.log("Houve um erro ao trazer as curtidas do usuário");
+        }
+    });
+}
+
+
+</script>
